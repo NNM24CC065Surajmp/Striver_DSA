@@ -1,0 +1,12 @@
+def two_sum_hash(nums, target):
+    hash_map = {}
+    for i in range(len(nums)):
+        compliment = target - nums[i]
+        if compliment in hash_map:
+            return [hash_map[compliment], i]
+        hash_map[nums[i]] = i
+    return None
+nums = list(map(int, input("Enter the numbers: ").split()))
+target = int(input("Enter the target: "))
+result = two_sum_hash(nums, target)
+print(result)
